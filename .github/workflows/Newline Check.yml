@@ -1,0 +1,24 @@
+name: Newline Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-newlines:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Check for consecutive newlines
+      run: |
+        # Script to check for consecutive newlines in files
+        # Example: grep -r -E '\n\n+' .
+
+        if grep -r -E '\n\n+' .; then
+          echo "Error: Files contain more than one consecutive newline."
+          exit 1
+        fi

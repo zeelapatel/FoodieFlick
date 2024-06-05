@@ -1,0 +1,6 @@
+.active,.activeHover:hover{
+    background: black;
+}
+.pointer {
+    cursor: pointer;
+}
